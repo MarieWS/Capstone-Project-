@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c58d39949.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="Header">
+        <div class="Logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+
+        <h1>Meal Plan</h1>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for something">
+        </div>
+
+        <div class="right-header">
+            <a href="Mainwebsite.html">MAIN WEBSITE</a>
+            <img src="images/bell-icon.png" alt="Notification Badge" class="bell-image">
+            <img src="images/user-image.png" alt="Profile Picture" class="user-image">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><img src="left panel images/dashboard.png" alt="Dashboard"><a href="dashboard.html">Dashboard</a></li>
+            <li><img src="left panel images/progress-tracker.png" alt="Progress Tracker"><a href="Progress tracker.html">Progress Tracker</a></li>
+            <li class="active"><img src="left panel images/meal-plan.png" alt="Meal Plan"><a href="Meal Plan.html">Meal Plan</a></li>
+            <li><img src="left panel images/recipe.png" alt="Recipe"><a href="#">Recipe</a></li>
+            <li><img src="left panel images/shopping-list.png" alt="Shopping List"><a href="shopping list.html">Shopping List</a></li>
+            <li><img src="left panel images/community.png" alt="Community"><a href="community.html">Community</a></li>
+
+        </ul>
+    </nav>
+        <main class="main-content">
+            <div class="profile-header">
+                <h2>Hello 👋</h2>
+            </div>
+            <form class="form">
+                <div class="form-group">
+                    <label>What is your gender?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" required> Male</label>
+                        <label><input type="radio" name="gender"> Female</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>When were you born?</label>
+                    <input id="inputs" type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Where are you from?</label>
+                    <input id="inputs" type="text" placeholder="Enter location" required>
+                </div>
+                <div class="form-group">
+                    <label>Dietary Preference</label>
+                    <input id="inputs" type="text" placeholder="e.g. Vegetarian" required>
+                </div>
+                <div class="form-group">
+                    <label>Activity level</label>
+                    <input id="inputs" type="text" placeholder="e.g.High" required>
+                </div>
+                <div class="form-group">
+                    <label>Health goals</label>
+                    <input id="inputs" type="text" placeholder="e.g. Weight loss" required>
+                </div>
+                <div class="form-group">
+                    <label>Allergies</label>
+                    <input id="inputs" type="text" placeholder="e.g. Diabetic" required>
+                </div>
+                <div class="form-group">
+                    <label>Height</label>
+                    <input id="inputs" type="text" placeholder="e.g. 170cm" required>
+                </div>
+                <div class="form-group">
+                    <label>Medical Condition</label>
+                    <input id="inputs" type="text" placeholder="e.g. Hypertension" required>
+                </div>
+                <div class="form-group">
+                    <label>Weight</label>
+                    <input id="inputs" type="text" placeholder="e.g. 75kg" required>
+                </div>
+                
+            </form>
+            <button type="submit" class="save-btn">Save</button>
+        </main>
+    </div>
+</body>
+</html>

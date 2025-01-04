@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.logo-container {
+    margin: 36px 50px;
+}
+
+.image-logo {
+    height: 60px;
+    width: 60px;
+}
+
+.account-success {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image-account {
+    width: 270px;
+    height: auto;
+}
+
+.acct-created {
+    font-size: 25px;
+    
+}
+
+/* .button {
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 9px;
+    font-size: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+} */
+.btn {
+    background-color: #ff0000;
+    color: #f0f0f0;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+
+    /* .btn {
+        background-color: #ff0000;
+        color: #fff;
+        height: 3rem;
+        width: 9rem;
+        border: none;
+        border-radius: 0.5rem;
+        text-transform: uppercase;
+    } */

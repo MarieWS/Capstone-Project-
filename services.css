@@ -1,0 +1,51 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+#services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 2em);
+    box-sizing: border-box;
+}
+
+.service-item h2 {
+    margin-top: 0;
+}
+
+.service-item p {
+    margin-bottom: 0;
+}
+
+/* Responsive font size */
+h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+/* Responsive width */
+.container {
+    width: clamp(300px, 50%, 800px);
+}

@@ -1,39 +1,44 @@
-const form = document.getElementById('register-form');
+<div>
+  <form id="register-form">
+    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+</div>
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
+<script>
+  const registerForm = document.getElementById('register-form');
 
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData);
+  registerForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'accept': 'application/json'
-    },
-    body: JSON.stringify(data),
-  };
+    const formData = new FormData(registerForm);
+    const data = Object.fromEntries(formData);
 
-  const endpoint = 'https://delish-nutrio.onrender.com/api/register'; // Assuming this is the registration endpoint
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
 
-  fetch(endpoint, options)
-    .then(response => {
       if (!response.ok) {
-        return response.text().then(text => {
-          console.log(text);
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        });
+        console.error('Registration failed:', response.status);
+        // Display an error message to the user
+        alert('Registration failed. Please try again.');
+      } else {
+        console.log('Registration successful!');
+        // Redirect to verification page
+        window.location.href = 'verifyEmail.html';
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Success:', data);
-      // Handle successful registration (e.g., redirect to verification page)
-      window.location.href = 'verifyEmail.html';
-    })
-    .catch(error => {
-      console.error('Error:', error);
+    } catch (error) {
+      console.error('Error during registration:', error);
       // Display an error message to the user
-    });
-});
+      alert('An error occurred during registration. Please try again.');
+    }
+  });
+</script>

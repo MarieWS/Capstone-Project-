@@ -40,7 +40,7 @@
     </nav>
         <main class="main-content">
             <div class="profile-header">
-                <h2>Hello 👋</h2>
+                <h2>Hello and Welcome👋</h2>
             </div>
             <form class="form">
                 <div class="form-group">
@@ -56,40 +56,112 @@
                 </div>
                 <div class="form-group">
                     <label>Where are you from?</label>
-                    <input id="inputs" type="text" placeholder="Enter location" required>
-                </div>
+                        <select id="inputs" required>
+                            <option value="North America">North America</option>
+                            <option value="South America">South America</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Antarctica">Antarctica</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Dietary Preference</label>
-                    <input id="inputs" type="text" placeholder="e.g. Vegetarian" required>
-                </div>
+                        <select id="inputs">
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Pescatarian">Pescatarian</option>
+                            <option value="Keto">Keto</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Activity level</label>
-                    <input id="inputs" type="text" placeholder="e.g.High" required>
-                </div>
+                        select id="inputs">
+                            <option value=Highs">High</option>
+                            <option value="Neutral">Neutral</option>
+                            <option value="Low">Low</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Health goals</label>
-                    <input id="inputs" type="text" placeholder="e.g. Weight loss" required>
-                </div>
+                        <select id="inputs">
+                            <option value="Weight loss">Weight loss</option>
+                            <option value="Muscle gain">Muscle gain</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Improved endurance">Improved endurance</option>
+                            <option value="Better flexibility">Better flexibility</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Allergies</label>
-                    <input id="inputs" type="text" placeholder="e.g. Diabetic" required>
-                </div>
+                        <select id="inputs">
+                            <option value="None">None</option>
+                            <option value="Peanuts">Peanuts</option>
+                            <option value="Tree nuts">Tree nuts</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Eggs">Eggs</option>
+                            <option value="Shellfish">Shellfish</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Soy">Soy</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Height</label>
-                    <input id="inputs" type="text" placeholder="e.g. 170cm" required>
-                </div>
+                        <select id="inputs">
+                            <option value="150cm">150cm</option>
+                            <option value="160cm">160cm</option>
+                            <option value="170cm">170cm</option>
+                            <option value="180cm">180cm</option>
+                            <option value="190cm">190cm</option>
+                            <option value="200cm">200cm</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Medical Condition</label>
-                    <input id="inputs" type="text" placeholder="e.g. Hypertension" required>
-                </div>
+                        <select id="inputs">
+                            <option value="None">None</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Hypertension">Hypertension</option>
+                            <option value="Asthma">Asthma</option>
+                            <option value="Heart disease">Heart disease</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 <div class="form-group">
                     <label>Weight</label>
-                    <input id="inputs" type="text" placeholder="e.g. 75kg" required>
-                </div>
+                        <select id="inputs">
+                            <option value="50kg">50kg</option>
+                            <option value="60kg">60kg</option>
+                            <option value="70kg">70kg</option>
+                            <option value="80kg">80kg</option>
+                            <option value="90kg">90kg</option>
+                            <option value="100kg">100kg</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 
             </form>
             <button type="submit" class="save-btn">Save</button>
         </main>
+    <script>
+        document.querySelector('.dropdown-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            } else {
+                dropdownContent.style.display = 'block';
+            }
+        });
+    </script>
     </div>
 </body>
 </html>

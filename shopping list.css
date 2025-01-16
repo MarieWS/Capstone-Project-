@@ -138,7 +138,8 @@ table {
     width:1239px;
     font-family: lato;
     font-size:larger;
-    font-weight:lighter;                
+    font-weight:lighter;  
+    font-weight: bold; /* Updated to make the table bold */
 }
 th, td {
     padding: 10px;

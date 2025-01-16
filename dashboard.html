@@ -89,6 +89,41 @@
                 
             </form>
             <button type="submit" class="save-btn">Save</button>
+            <div>
+  <h3>Dashboard</h3>
+  {/* Display user information or other dashboard content here */}
+</div>
+
+<script>
+  // Access and use the stored token for authenticated requests
+  const token = localStorage.getItem('token'); 
+
+  if (token) {
+    // Make authenticated requests to protected endpoints (e.g., /api/profile, /api/generatemeal)
+    fetch('/api/profile', {
+      headers: {
+        'Authorization': `Bearer ${token}` 
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Failed to fetch user profile.');
+      }
+    })
+    .then(profileData => {
+      // Display user profile information
+      console.log(profileData); 
+    })
+    .catch(error => {
+      console.error('Error fetching user profile:', error);
+    });
+  } else {
+    // Handle case where the user is not logged in
+    window.location.href = '/login'; 
+  }
+</script>
         </main>
     </div>
 </body>

@@ -30,14 +30,39 @@
         <div class="verification-container">
         
             <div class="verification-box">
-                <h2>Check your Email</h2>
-                <p class="verification-p1">An Email with a verification link has been sent to your mail.</p>
-                 <p class="verification-p2">Please click the link in that email to validate your account.</p>
-            </div>
-            <p class="instructions">If you didn’t receive an email from us, please make sure the <br> email displayed above is correct or check your spam mail.</p>
-            <div class="button-container">
-                <button class="resend-button"><a href="">Resend Link</a></button>
-                <button class="confirm-button"><a href="accountcreationsuccess.html">Confirm</a></button>
+                <div>
+  <h3>Email Verification</h3>
+  <p>Please check your email for a verification link.</p>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('token');
+
+  if (token) {
+    fetch(`/api/verifyemail/${token}`, {
+      method: 'GET'
+    })
+    .then(response => {
+      if (!response.ok) {
+        console.error('Error verifying email:', response.status);
+        alert('Email verification failed. Please try again.'); 
+      } else {
+        console.log('Email verified successfully!');
+        alert('Email verified successfully! You can now login.'); 
+        // Redirect to login page
+        window.location.href = 'login.html'; 
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred during email verification. Please try again.');
+    });
+  } else {
+    console.error('Token not found in URL.');
+    alert('Invalid verification link.');
+  }
+</script>
             </div>
         </div>
     </section>

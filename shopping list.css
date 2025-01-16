@@ -148,7 +148,80 @@ th, td {
 .table-head {
     color: rgb(152, 152, 243);
 
-}           
+}       
+
+ /*
+      responsive navigation menu
+      displayed horizontally on large screens and vertically on small screens
+    */
+    @media screen and (max-width: 600px) {
+        .topnav a {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    /* responsive column layout with FLOAT */
+    .column {
+        float: left;
+        width: 25%;
+    }
+    @media screen and (max-width: 992px) {
+        .column {
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+    }
+    /* same with FLEX */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 25%;
+      padding: 20px;
+    }
+    @media screen and (max-width: 992px) {
+      .column {
+        flex: 50%;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    /* when the width is between 600px and 900px */
+    @media screen and (max-width: 900px) and (min-width: 600px) {
+      div.example {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+      }
+    }
+    /* when the width is between 600px and 900px OR above 1100px */
+    @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+      div.example {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+      }
+    }
+
+    /* change layout of a page depending on the orientation of the browser */
+    @media only screen and (orientation: landscape) {
+        body {
+            background-color: lightblue;
+        }
+    }
+
 
 .total {
     color: #E53935;

@@ -25,19 +25,65 @@
                 <img src="images/blackarrow.png" alt="Black Arrow">
             </div>
             <h3>Welcome</h3>
-            <form id="register-form"> 
+            <form id="register-form">
                 <div class="Form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName">
+                    <input type="text" id="firstName" name="firstName" required>
                 </div>
-                <button type="submit">Sign Up</button> 
+                <div class="Form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="Form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="Form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Sign Up</button>
             </form>
             <p>By clicking "SignUp", you agree that you have read the <a href="#">Privacy Policy</a> and have 
                 reviewed and agree to <a href="#">Terms and conditions.</a></p>
         </div>
     </div>
 
-    <script src="js/register.js" defer></script> 
+    <script>
+        const registerForm = document.getElementById('register-form');
+
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(registerForm);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/api/register', { 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    console.error('Registration failed:', response.status);
+                    // Display an error message to the user
+                    alert('Registration failed. Please try again.');
+                } else {
+                    console.log('Registration successful!');
+                    // Redirect to verification page
+                    window.location.href = 'verifyEmail.html';
+                }
+            } catch (error) {
+                console.error('Error during registration:', error);
+                // Display an error message to the user
+                alert('An error occurred during registration. Please try again.');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

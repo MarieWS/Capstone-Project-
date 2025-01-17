@@ -7,7 +7,7 @@ registerForm.addEventListener('submit', async (event) => {
   const data = Object.fromEntries(formData);
 
   try {
-    const response = await fetch('/api/register', { 
+    const response = await fetch('https://techcrush-backend.netlify.app/.netlify/functions/register', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -16,14 +16,14 @@ registerForm.addEventListener('submit', async (event) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.json(); // Try to get error details from the server
+      const errorData = await response.json(); 
       console.error('Registration failed:', errorData.message || response.status); 
-      // Display a more specific error message to the user
-      alert('Registration failed. ' + (errorData.message || 'Please try again.')); 
+      alert(`Registration failed. ${errorData.message || 'Please try again.'}`); 
     } else {
       console.log('Registration successful!');
-      // Redirect to verification page
-      window.location.href = 'verifyEmail.html';
+      alert('Registration successful! Please check your email for verification.'); 
+      // Redirect to success page after successful registration
+      window.location.href = 'success.html'; 
     }
   } catch (error) {
     console.error('Error during registration:', error);
